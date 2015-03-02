@@ -1,10 +1,10 @@
 #
-# GNU Makefile for the GFXMath header testing project
+# GNU Makefile for the hello_glut project
 #
 # Michael Shafae
 # mshafae at fullerton.edu
 #
-# $Id: Makefile 5478 2015-01-24 22:10:45Z mshafae $
+# $Id: Makefile 5535 2015-02-17 11:06:10Z mshafae $
 #
 # It depends on the config.guess program that is in the config directory
 # to guess what configuration to use for the build.
@@ -21,12 +21,12 @@ $(error "Platform '$(SYSTEM)' not supported")
 endif
 
 
-TARGET = GFXMath_Test
+TARGET = bresenham
 # C++ Files
-CXXFILES =   GFXMath_Test.cpp
+CXXFILES =   bresenham.cpp
 CFILES =  
 # Headers
-HEADERS =  GFXMath.h
+HEADERS =   GLFWApp.h
 
 OBJECTS = $(CXXFILES:.cpp=.o) $(CFILES:.c=.o)
 
@@ -41,12 +41,12 @@ $(TARGET): $(OBJECTS)
 
 %.d: %.cpp
 	set -e; $(CXX) -MM $(CFLAGS) $< \
-	| sed 's/($*).o[ :]*/.o $@ : /g' > $@; \
+	| sed 's/($*).o[ :]*/.o $@ : /g' > $@; \
 	[ -s $@ ] || rm -f $@
 
 %.d: %.c
 	set -e; $(CXX) -MM $(CFLAGS) $< \
-	| sed 's/($*).o[ :]*/.o $@ : /g' > $@; \
+	| sed 's/($*).o[ :]*/.o $@ : /g' > $@; \
 	[ -s $@ ] || rm -f $@
 
 %.o: %.cpp

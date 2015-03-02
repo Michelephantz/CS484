@@ -30,6 +30,10 @@
  *
  */
 
+#pragma push_macro("minor")
+#undef minor
+
+
 #ifndef _GFXMATH_H_
 #define _GFXMATH_H_
 #ifdef WIN32
@@ -1285,5 +1289,7 @@ static Mat4 lookat(const Vec3& eye, const Vec3& center, const Vec3& up){
   // Fill me in!  
   return m;
 }
+
+#pragma pop_macro("minor")
 
 #endif // End GFXMath.h
