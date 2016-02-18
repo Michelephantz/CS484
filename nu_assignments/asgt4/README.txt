@@ -1,7 +1,6 @@
 Bresenham README
 
-Michelle Beck
-meeshell at csu.fullerton.edu
+Michelle
 
 3/1/2015
 
